@@ -1,0 +1,70 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+body{
+  background:#ccc;
+}
+.selection{
+  background:#888;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.selection select{
+  width:20%;
+  height: 30px;
+  margin: 5px;
+  font-size:1.2em;
+  cursor: pointer;
+}
+.selection .submit{
+  width:15%;
+  height:30px;
+  line-height: 30px;
+  text-align:center;
+  background:red;
+  margin: 5px;
+  text-decoration: none;
+  color:#fff;
+}
+.content{
+  background:#eee;
+  width:99%;
+  margin:10px auto;
+  display: flex;
+  justify-content:center;
+}
+.product{
+  width:255px;
+  background:#fff;
+  height:400px;
+  margin: 10px;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+.product div{
+  padding:2px 5px;
+}
+.image{
+  width: 245px;
+  height: 245px;
+  background:#E5E5E5;
+  margin:0 auto;
+}
+.pName{
+  color:#555;
+  text-transform: uppercase;
+}
+.pModel{
+  font-size:1.6em;
+}
+.pYear{
+  text-align:right;
+  position: absolute;
+  bottom:0;
+  right:0;
+  
+}

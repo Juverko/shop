@@ -1,6 +1,7 @@
 const Router  = require('express').Router;
 const ProdSchema  = require('./Schema');
 const prodRout = new Router();
+
 // prodRout.get('/product');
 prodRout.post('/post',async(req,res)=>{
   try{
@@ -21,7 +22,36 @@ prodRout.get('/getAll',async(req,res)=>{
     res.status(500).json(e);
   }
 });
-// prodRout.getOne('/product/:id');
+prodRout.get('getId/:id',async(req,res)=>{
+  try{
+    const {id}=req.params;
+    console.log(req.params);
+    const product = await ProdSchema.findById(id);
+    return res.json(product);
+  }catch(e){
+    res.status(500).json(e);
+  }
+});
+prodRout.get('/filter',async(req,res)=>{
+  try{
+    const {pYear,pModel}=req.params;
+    console.log(req.params);
+    const product = await ProdSchema.find({pYear,pModel});
+    return res.json(product);
+  }catch(e){
+    res.status(500).json(e);
+  }
+});
+prodRout.get('/test',async(req,res)=>{
+  try{
+    // const {pYear,pModel}=req.query;
+    // console.log(req.query);
+    const product = await ProdSchema.find(req.query);
+    return res.json(product); 
+  }catch(e){
+    res.status(500).json(e);
+  }
+});
 // prodRout.getMore('/products');
 // prodRout.put('/product');
 // prodRout.delete('/product/:id');
