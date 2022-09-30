@@ -4,6 +4,7 @@ const prodRout = new Router();
 
 // prodRout.get('/product');
 prodRout.post('/post',async(req,res)=>{
+  console.log(req.body);
   try{
     const {pName,pYear,pModel,pEngine} = req.body;
     const prod = await ProdSchema.create({pName,pYear,pModel,pEngine});

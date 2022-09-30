@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body{
-  background:#ccc;
+  background:#eee;
 }
 .selection{
   background:#888;
@@ -30,12 +30,58 @@ body{
   text-decoration: none;
   color:#fff;
 }
-.content{
+.row{
+  width:1375px;
+  margin:0 auto;
+  /* border:3px solid red; */
+  position: relative;
+  overflow: hidden;
   background:#eee;
+  box-shadow:0 3px 3px #999;
+  padding:0 20px;
+}
+.row:hover>.prev,
+.row:hover>.next{
+  display: block;
+}
+.prev,
+.next{
+  background:rgba(0,0,0,.3);
+  width:20px;
+  text-align:center;
+  height:400px;
+  line-height:400px;
+  position:absolute;
+  top:20px;
+  color:gold;
+  font-weight:900;
+  cursor:pointer;
+  transition:.5s;
+  display: none;
+  /* left: 0px; */
+}
+.prev{
+  left:0;
+}
+.next{
+  right:0;
+}
+.prev:hover,
+.next:hover{
+  background:rgba(0,0,0,.8);
+}
+.prev:active,
+.next:active{
+  background:rgba(255,0,0,.8);
+}
+.content{
+  
   width:99%;
-  margin:10px auto;
+  /* margin:10px auto; */
   display: flex;
-  justify-content:center;
+  /* justify-content:center; */
+  /* width:3000px; */
+  transition:.6s;
 }
 .product{
   width:255px;
@@ -67,4 +113,45 @@ body{
   bottom:0;
   right:0;
   
+}
+.login a[href="login.html"]{
+  display: block;
+  background:rgba(0,0,0,.7);
+  color:#fff;
+  width:200px;
+  text-align:center;
+  padding:10px 0;
+  text-decoration: none;
+  position: absolute;
+  bottom:0;
+  right:0;
+  margin: 10px;
+}
+.login a[href="login.html"]:active{
+  background:red;
+}
+
+.addProduct{
+  width:400px;
+  margin:10px auto;
+  height:300px;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+.addProduct input,.add{
+  display: block;
+  margin:10px;
+  height:40px;
+  width:400px;
+}
+.add{
+  background:red;
+  text-align:center;
+  line-height:40px;
+  text-decoration: none;
+  color:#fff;
+}
+.add:active{
+  background:#333;
 }
